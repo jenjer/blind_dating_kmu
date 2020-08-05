@@ -10,7 +10,7 @@ public class HeartsViewModel extends ViewModel {
 
     public HeartsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is hearts fragment");
     }
 
     public LiveData<String> getText() {

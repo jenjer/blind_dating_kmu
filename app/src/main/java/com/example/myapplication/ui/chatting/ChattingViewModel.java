@@ -10,7 +10,7 @@ public class ChattingViewModel extends ViewModel {
 
     public ChattingViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is chatting fragment");
     }
 
     public LiveData<String> getText() {
