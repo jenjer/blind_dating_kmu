@@ -20,8 +20,7 @@ public class HeartsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        heartsViewModel =
-                ViewModelProviders.of(this).get(HeartsViewModel.class);
+        heartsViewModel = ViewModelProviders.of(this).get(HeartsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_hearts, container, false);
         final TextView textView = root.findViewById(R.id.text_hearts);
         heartsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
