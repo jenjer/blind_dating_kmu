@@ -73,10 +73,10 @@
             android:text="구글" />
 
         <Button
-            android:id="@+id/facebook"
+            android:id="@+id/testButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="페북" />
+            android:text="테스트 버튼" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
