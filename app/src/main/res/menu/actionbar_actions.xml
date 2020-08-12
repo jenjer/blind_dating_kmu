@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/home_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always"> </item>
     <item
         android:title="Item"
+        android:id="@+id/user_settings"
         android:icon="@drawable/ic_user"
         app:showAsAction="always"> </item>
 </menu>
