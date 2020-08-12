@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -44,17 +45,19 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.actionbar_actions, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Actionbar item click event
         int id = item.getItemId();
         if (id == R.id.user_settings){
             Toast.makeText(getActivity(), "Settings", Toast.LENGTH_SHORT).show();
+            Intent user_setting_activity = new Intent(this.getContext(), UserSettingActivity.class);
+            startActivity(user_setting_activity);
         }
         if (id == R.id.home_search){
             Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();

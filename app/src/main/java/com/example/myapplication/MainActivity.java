@@ -1,9 +1,8 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -24,5 +23,17 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Actionbar item click event
+        // Move to UserSettings Intent
+        int id = item.getItemId();
+//        if (id == R.id.user_settings){
+//            Intent user_setting_activity = new Intent(getApplicationContext(), UserSettingsFragment.class);
+//            startActivity(user_setting_activity);
+//        }
+        return super.onOptionsItemSelected(item);
     }
 }
