@@ -55,12 +55,12 @@ public class HomeFragment extends Fragment {
         // Actionbar item click event
         int id = item.getItemId();
         if (id == R.id.user_settings){
-            Toast.makeText(getActivity(), "Settings", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "Settings", Toast.LENGTH_SHORT).show();
             Intent user_setting_activity = new Intent(this.getContext(), UserSettingActivity.class);
             startActivity(user_setting_activity);
         }
         if (id == R.id.home_search){
-            Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
