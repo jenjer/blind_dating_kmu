@@ -5,6 +5,9 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-    }
 
+    }
+/* 쓸대없는코드인데 어디에쓰는거야? 주석처리해도 잘 돌아감
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Actionbar item click event
@@ -35,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(user_setting_activity);
 //        }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
+
 }
