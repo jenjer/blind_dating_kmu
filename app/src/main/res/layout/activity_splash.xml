@@ -54,7 +54,7 @@
             android:text="아이디/비밀번호 찾기" />
 
         <Button
-            android:id="@+id/Register"
+            android:id="@+id/register"
             android:layout_width="211dp"
             android:layout_height="41dp"
             android:text="회원가입" />

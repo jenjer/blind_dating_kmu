@@ -28,17 +28,4 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
     }
-/* 쓸대없는코드인데 어디에쓰는거야? 주석처리해도 잘 돌아감
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Actionbar item click event
-        // Move to UserSettings Intent
-        int id = item.getItemId();
-//        if (id == R.id.user_settings){
-//            Intent user_setting_activity = new Intent(getApplicationContext(), UserSettingsFragment.class);
-//            startActivity(user_setting_activity);
-//        }
-        return super.onOptionsItemSelected(item);
-    }*/
-
 }

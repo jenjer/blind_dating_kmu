@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.ui.splash.RegisterActivity;
+
 
 public class SplashActivity extends AppCompatActivity {
 /*
@@ -15,19 +17,25 @@ public class SplashActivity extends AppCompatActivity {
     IDtext = id 적는 텍스트박스
     loginbutton = login버튼
     PWtext = pw 적는 텍스트박스
- */
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        EditText IDtext = (EditText)findViewById(R.id.editTextTextPersonName);
-        EditText PWtext = (EditText)findViewById(R.id.editTextTextPassword);
-        Button loginButton = (Button) findViewById(R.id.login);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = (Button)findViewById(R.id.register);
+        Button testButton = (Button)findViewById(R.id.testButton);
+        testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
             }
         });
