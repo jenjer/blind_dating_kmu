@@ -107,7 +107,7 @@
                     android:background="#00FF0000"
                     android:gravity="center|left"
                     android:textSize="16sp"
-                    android:text="      학교 인증" />
+                    android:text="      학교 인증!!!" />
 
                 <Button
                     android:id="@+id/user_info_change"
