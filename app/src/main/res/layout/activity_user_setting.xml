@@ -31,9 +31,25 @@
                         android:id="@+id/user_setting_user_image"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="User_Info"
+                        android:text="Us"
                         android:textSize="30sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/user_Image"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/user_setting_user_image2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="U"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -107,7 +123,7 @@
                     android:background="#00FF0000"
                     android:gravity="center|left"
                     android:textSize="16sp"
-                    android:text="      학교 인증!!!" />
+                    android:text="      학교 인증" />
 
                 <Button
                     android:id="@+id/user_info_change"

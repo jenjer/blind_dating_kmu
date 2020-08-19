@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
@@ -17,6 +19,19 @@ public class UserSettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_setting);
+
+        //이미지 설정
+        ImageView user_image = (ImageView)findViewById(R.id.user_Image);
+        user_image.setImageResource(R.drawable.ic_human_icon);
+
+        //이미지 클릭시 띄우기
+        user_image.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent user_setting_activity = new Intent(getApplicationContext(), UserSettingActivity.class);
+                startActivity(user_setting_activity);
+            }
+        });
     }
 
     @Override
