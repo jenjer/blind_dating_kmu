@@ -22,7 +22,7 @@ public class UserSettingActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼
-        getSupportActionBar().setTitle("UserSetting");
+        getSupportActionBar().setTitle("내 정보");
         return super.onCreateOptionsMenu(menu);
     }
 

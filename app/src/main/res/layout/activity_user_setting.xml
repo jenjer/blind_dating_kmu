@@ -28,7 +28,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/user_setting_userinfo"
+                        android:id="@+id/user_setting_user_image"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="User_Info"
@@ -96,44 +96,36 @@
                     android:id="@+id/user_setting_acount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Acount"
+                    android:text="  계정"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/school_certification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      학교 인증" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/user_info_change"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      내 정보 수정" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/user_logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00FF0000"
-                    android:text="Button" />
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      로그아웃" />
 
             </LinearLayout>
 
@@ -147,30 +139,36 @@
                     android:id="@+id/user_setting_app_settings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="App Settings"
+                    android:text="  앱 설정"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/notification_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      알림 설정" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/message_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      쪽지 설정" />
 
                 <Button
-                    android:id="@+id/button8"
+                    android:id="@+id/password_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      암호 설정" />
             </LinearLayout>
 
             <LinearLayout
@@ -183,51 +181,63 @@
                     android:id="@+id/user_setting_app_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="App Info"
+                    android:text="  앱 정보"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/app_version"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      앱 버전" />
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/suggestions_question"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="      건의/문의사항" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/notice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="       공지사항" />
 
                 <Button
-                    android:id="@+id/button12"
+                    android:id="@+id/community_rules"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="       커뮤니티 이용규칙" />
 
                 <Button
-                    android:id="@+id/button13"
+                    android:id="@+id/privacy_policy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="       개인정보 처리방침" />
 
                 <Button
-                    android:id="@+id/button14"
+                    android:id="@+id/open_source_license"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="       오픈소스 라이선스" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -239,16 +249,43 @@
                     android:id="@+id/user_setting_etc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Etc"
+                    android:text="  기타"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button15"
+                    android:id="@+id/set_info_consent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FF0000"
-                    android:text="Button" />
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="        정보 동의 설정" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_rounded_corners"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/account_management"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  계정 관리"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/membership_withdrawal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FF0000"
+                    android:gravity="center|left"
+                    android:textSize="16sp"
+                    android:text="        회원탈퇴" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
