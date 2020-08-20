@@ -24,11 +24,31 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <EditText
-                android:id="@+id/EditText_NewID"
+                android:id="@+id/EditText_find_collage"
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:hint="학교명을 입력해주세요." />
+
+            <ListView
+                android:id="@+id/Listview_find_collage"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:hint="학교명을 입력해주세요">
+
+            </ListView>
+
+            <EditText
+                android:id="@+id/editText_NewID"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:hint="아이디를 입력해주세요." />
 
