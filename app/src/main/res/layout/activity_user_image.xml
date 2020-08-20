@@ -7,8 +7,9 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="410dp"
+        android:id="@+id/user_image_view"
+        android:layout_width="match_parent"
         android:layout_height="410dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:adjustViewBounds="true"/>
 </LinearLayout>

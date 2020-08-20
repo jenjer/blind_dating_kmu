@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.ui.home.settings.UserImageActivity;
 
 public class UserSettingActivity extends AppCompatActivity {
 
@@ -28,8 +29,8 @@ public class UserSettingActivity extends AppCompatActivity {
         user_image.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent user_setting_activity = new Intent(getApplicationContext(), UserSettingActivity.class);
-                startActivity(user_setting_activity);
+                Intent user_image_activity = new Intent(getApplicationContext(), UserImageActivity.class);
+                startActivity(user_image_activity);
             }
         });
     }
