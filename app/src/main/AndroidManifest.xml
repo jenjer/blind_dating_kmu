@@ -23,9 +23,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ui.home.settings.UserImageActivity"></activity>
         <activity android:name=".ui.splash.RegisterActivity"></activity>
-
+        <activity android:name=".ui.home.settings.UserImageActivity"></activity>
+        <activity android:name=".ui.home.settings.SchoolCertificationActivity"></activity>
+        <activity android:name=".ui.home.settings.UserInfoChangeActivity"></activity>
+        <activity android:name=".ui.home.settings.NotificationSettingActivity"></activity>
+        <activity android:name=".ui.home.settings.MessageSettingActivity"></activity>
+        <activity android:name=".ui.home.settings.PasswordSettingActivity"></activity>
+        <activity android:name=".ui.home.settings.SuggestionsQuestionsSettingActivity"></activity>
+        <activity android:name=".ui.home.settings.NoticeActivity"></activity>
+        <activity android:name=".ui.home.settings.CommunityRulesActivity"></activity>
+        <activity android:name=".ui.home.settings.PrivacyPolicyActivity"></activity>
+        <activity android:name=".ui.home.settings.SetInfoConsentActivity"></activity>
+        <activity android:name=".ui.home.settings.MembershipWithdrawalActivity"></activity>
     </application>
 
 </manifest>

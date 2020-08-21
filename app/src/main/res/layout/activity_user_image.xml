@@ -12,4 +12,5 @@
         android:layout_height="410dp"
         tools:srcCompat="@tools:sample/avatars"
         android:adjustViewBounds="true"/>
+
 </LinearLayout>
