@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -37,7 +39,6 @@ public class Collage_find_adapter extends BaseAdapter {
 
     public class ViewHolder {
         TextView tv_name;
-        ImageView iv_icon;
     }
 
     @Override
@@ -59,7 +60,6 @@ public class Collage_find_adapter extends BaseAdapter {
     public View getView(final int position, View view, ViewGroup parent) {
         final ViewHolder holder;
         final String Collage = Colage_List.get(position);
-
 
         if (view == null) {
             holder = new ViewHolder();

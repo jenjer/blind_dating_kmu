@@ -39,7 +39,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:hint="학교명을 입력해주세요">
+                android:hint="학교명을 입력해주세요"
+                android:visibility="invisible">
 
             </ListView>
 
