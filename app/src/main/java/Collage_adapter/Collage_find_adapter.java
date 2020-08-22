@@ -24,83 +24,54 @@ import java.util.Locale;
 
 public class Collage_find_adapter extends BaseAdapter {
 
-    // Declare Variables
-    Context context;
-    LayoutInflater inflater;
-    private List<String> Colage_List = null;
-    private ArrayList<String> arrayList;
-    public Collage_find_adapter(Context context, List<String> Colage_List) {
+    private Context context;
+    private List<String> list;
+    private LayoutInflater inflate;
+    private ViewHolder viewHolder;
+
+    public Collage_find_adapter(List<String> list, Context context){
+        this.list = list;
         this.context = context;
-        this.Colage_List = Colage_List;
-        inflater = LayoutInflater.from(context);
-        this.arrayList = new ArrayList<String>();
-        this.arrayList.addAll(Colage_List);
+        this.inflate = LayoutInflater.from(context);
     }
-
-    public class ViewHolder {
-        TextView tv_name;
-    }
-
     @Override
     public int getCount() {
-        return Colage_List.size();
+        return list.size();
     }
 
     @Override
-    public String getItem(int position) {
-        return Colage_List.get(position);
+    public Object getItem(int i) {
+        return null;
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public long getItemId(int i) {
+        return 0;
     }
 
     @Override
-    public View getView(final int position, View view, ViewGroup parent) {
-        final ViewHolder holder;
-        final String Collage = Colage_List.get(position);
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
+        if(convertView == null){
+            convertView = inflate.inflate(R.layout.row_collage,null);
 
-        if (view == null) {
-            holder = new ViewHolder();
-            view = inflater.inflate(R.layout.row_collage, null);
-            // Locate the TextViews in listview_item.xml
-            holder.tv_name = (TextView) view.findViewById(R.id.textView_row);
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
+            viewHolder = new ViewHolder();
+            viewHolder.label = (TextView) convertView.findViewById(R.id.textView_row);
+
+            convertView.setTag(viewHolder);
+        }else{
+            viewHolder = (ViewHolder)convertView.getTag();
         }
-        // Set the results into TextViews
-        holder.tv_name.setText(Collage);
 
-        // Listen for ListView Item Click
-        view.setOnClickListener(new View.OnClickListener() {
+        // 리스트에 있는 데이터를 리스트뷰 셀에 뿌린다.
+        viewHolder.label.setText(list.get(position));
 
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(context, RegisterActivity.class);;
-                context.startActivity(intent);
-            }
-        });
-
-        return view;
+        return convertView;
     }
 
-    // Filter Class
-    public void filter(String charText) {
-        charText = charText.toLowerCase(Locale.getDefault());
-        Colage_List.clear();
-        if (charText.length() == 0) {
-            Colage_List.addAll(arrayList);
-        } else {
-            for (String potion : arrayList) {
-//                String name = context.getResources();
- //               if (name.toLowerCase().contains(charText)) {
-                    Colage_List.add(potion);
-                }
-            }
-        }
-  //      notifyDataSetChanged();
+    class ViewHolder{
+        public TextView label;
+    }
+
 }
 
 
