@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.myapplication"
+        applicationId "com.example.University_blind_dating"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -51,5 +51,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 
 }

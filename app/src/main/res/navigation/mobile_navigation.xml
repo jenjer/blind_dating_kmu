@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:name="com.example.University_blind_dating.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -26,25 +26,25 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:name="com.example.University_blind_dating.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.myapplication.ui.notifications.NotificationsFragment"
+        android:name="com.example.University_blind_dating.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_hearts"
-        android:name="com.example.myapplication.ui.hearts.HeartsFragment"
+        android:name="com.example.University_blind_dating.ui.hearts.HeartsFragment"
         android:label="@string/title_hearts"
         tools:layout="@layout/fragment_hearts" />
 
     <fragment
         android:id="@+id/navigation_chatting"
-        android:name="com.example.myapplication.ui.chatting.ChattingFragment"
+        android:name="com.example.University_blind_dating.ui.chatting.ChattingFragment"
         android:label="@string/title_chatting"
         tools:layout="@layout/fragment_chatting" />
 

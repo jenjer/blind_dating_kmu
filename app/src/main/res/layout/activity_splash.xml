@@ -59,12 +59,13 @@
             android:layout_height="41dp"
             android:text="회원가입" />
 
-        <Button
-            android:id="@+id/kakao"
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/Button_facebook_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="카카오" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
 
         <Button
             android:id="@+id/google"
