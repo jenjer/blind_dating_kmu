@@ -26,13 +26,7 @@ public class HeartsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         heartsViewModel = ViewModelProviders.of(this).get(HeartsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_hearts, container, false);
-        final TextView textView = root.findViewById(R.id.text_hearts);
-        heartsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
     /*------------------Actionbar of Home Fragment-------------------*/

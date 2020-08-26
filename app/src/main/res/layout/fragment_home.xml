@@ -6,21 +6,108 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/Button_Fragment_Chat"
-        android:layout_width="wrap_content"
-        android:layout_height="109dp"
-        android:text="move_chat" />
-
-        <TextView
-            android:id="@+id/text_home"
+            <TextView
+            android:id="@+id/text_view_today_match"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp" />
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="오늘의 소개"
+            android:textSize="30sp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:orientation="horizontal">
 
-</LinearLayout>
+            <Button
+                android:id="@+id/Button_Fragment_Chat"
+                android:layout_width="190dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:text="move_chat" />
+
+            <Button
+                android:id="@+id/button_Fragment_Chat2"
+                android:layout_width="190dp"
+                android:layout_height="170dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="move_chat" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Button" />
+
+            <TextView
+                android:id="@+id/text_view_group_ting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="과팅"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="179dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_Fragment_Chat3"
+                    android:layout_width="190dp"
+                    android:layout_height="170dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="move_chat" />
+
+                <Button
+                    android:id="@+id/button_Fragment_Chat4"
+                    android:layout_width="190dp"
+                    android:layout_height="170dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="move_chat" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_view_community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="게시판"
+                android:textSize="30sp" />
+
+            <ListView
+                android:id="@+id/ListView_Community"
+                android:layout_width="match_parent"
+                android:layout_height="205dp">
+
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>

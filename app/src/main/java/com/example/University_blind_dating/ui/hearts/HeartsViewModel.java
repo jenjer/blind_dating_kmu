@@ -6,14 +6,5 @@ import androidx.lifecycle.ViewModel;
 
 public class HeartsViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
 
-    public HeartsViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is hearts fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
-    }
 }

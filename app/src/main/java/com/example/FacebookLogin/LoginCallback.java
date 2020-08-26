@@ -10,10 +10,13 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginCallback implements FacebookCallback<LoginResult> {
+import java.util.ArrayList;
 
+public class LoginCallback implements FacebookCallback<LoginResult> {
+    ArrayList<String> myarray = new ArrayList<String>();
     //Call when you success login it means Access Tocken making
     @Override
     public void onSuccess(LoginResult loginResult){
@@ -39,13 +42,20 @@ public class LoginCallback implements FacebookCallback<LoginResult> {
                 new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.e("result",object.toString());
+                        try {
+                            Log.e("result", object.toString());
+                            String email = response.getJSONObject().getString("email").toString();
+
+                        }catch(JSONException e){
+                            e.printStackTrace();
+                        }
                     }
-                });
+                    });
         Bundle parameters = new Bundle();
         parameters.putString("fields","id,name,email,gender,birthday");
         graphRequest.setParameters(parameters);
         graphRequest.executeAsync();
+
     }
 
 }

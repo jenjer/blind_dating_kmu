@@ -22,13 +22,7 @@ public class ChattingFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         chattingViewModel = ViewModelProviders.of(this).get(ChattingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_chatting, container, false);
-        final TextView textView = root.findViewById(R.id.text_chatting);
-        chattingViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

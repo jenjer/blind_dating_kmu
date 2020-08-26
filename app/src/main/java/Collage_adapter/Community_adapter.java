@@ -1,6 +1,5 @@
 package Collage_adapter;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +11,16 @@ import com.example.University_blind_dating.R;
 
 import java.util.List;
 
-
-public class Collage_find_adapter extends BaseAdapter {
-
+public class Community_adapter extends BaseAdapter {
     private Context context;
     private List<String> list;
-    private List<String> list_Community_text;
+    private List<String> Community_text;
     private LayoutInflater inflate;
-    private ViewHolder viewHolder;
+    private Community_adapter.ViewHolder viewHolder;
 
-    public Collage_find_adapter(List<String> list, Context context){
+    public Community_adapter(List<String> list, Context context, List<String> list_Community_text){
         this.list = list;
+        this.Community_text = list_Community_text;
         this.context = context;
         this.inflate = LayoutInflater.from(context);
     }
@@ -44,24 +42,28 @@ public class Collage_find_adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         if(convertView == null){
-            convertView = inflate.inflate(R.layout.row_collage,null);
+            convertView = inflate.inflate(R.layout.row_community,null);
 
-            viewHolder = new ViewHolder();
-            viewHolder.label = (TextView) convertView.findViewById(R.id.textView_row);
+            viewHolder = new Community_adapter.ViewHolder();
+            viewHolder.label = (TextView) convertView.findViewById(R.id.Textview_Title);
+            viewHolder.Community_text = (TextView) convertView.findViewById(R.id.textview_community_text);
+
             convertView.setTag(viewHolder);
         }else{
-            viewHolder = (ViewHolder)convertView.getTag();
+            viewHolder = (Community_adapter.ViewHolder)convertView.getTag();
         }
 
         // 리스트에 있는 데이터를 리스트뷰 셀에 뿌린다.
         viewHolder.label.setText(list.get(position));
+        viewHolder.Community_text.setText(Community_text.get(position));
+
         return convertView;
     }
 
     class ViewHolder{
         public TextView label;
+        public TextView Community_text;
+
     }
 
 }
-
-
