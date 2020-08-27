@@ -17,9 +17,9 @@
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/navigation_hearts"
-        android:icon="@drawable/ic_hearts"
-        android:title="@string/title_hearts" />
+        android:id="@+id/navigation_meeting"
+        android:icon="@drawable/ic_meeting"
+        android:title="@string/title_meeting" />
 s
     <item
         android:id="@+id/navigation_chatting"

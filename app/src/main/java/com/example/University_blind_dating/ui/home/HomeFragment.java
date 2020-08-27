@@ -133,6 +133,10 @@ public class HomeFragment extends Fragment {
         if (id == R.id.home_search){
             //Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
         }
+        if (id == R.id.likes){
+            Intent likes_activity = new Intent(this.getContext(), LikesActivity.class);
+            startActivity(likes_activity);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

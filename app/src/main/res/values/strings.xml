@@ -4,7 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_hearts">Hearts</string>
+    <string name="title_meeting">Meeting</string>
     <string name="title_chatting">Chatting</string>
     <string name="title_user_setting">유저 설정</string>
     <!-- Preference Titles -->

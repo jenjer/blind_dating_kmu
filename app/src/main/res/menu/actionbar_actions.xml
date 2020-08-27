@@ -13,4 +13,9 @@
         android:id="@+id/user_settings"
         android:icon="@drawable/ic_user"
         app:showAsAction="always"> </item>
+    <item
+        android:id="@+id/likes"
+        android:icon="@drawable/ic_likes"
+        android:title="likes"
+        app:showAsAction="always" />
 </menu>

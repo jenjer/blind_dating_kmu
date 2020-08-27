@@ -17,11 +17,11 @@
             android:id="@+id/action_navigation_home_to_navigation_notifications2"
             app:destination="@id/navigation_notifications" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_hearts"
-            app:destination="@id/navigation_hearts" />
-        <action
             android:id="@+id/action_navigation_home_to_navigation_chatting"
             app:destination="@id/navigation_chatting" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_hearts"
+            app:destination="@id/navigation_meeting" />
     </fragment>
 
     <fragment
@@ -37,10 +37,10 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/navigation_hearts"
-        android:name="com.example.University_blind_dating.ui.hearts.HeartsFragment"
-        android:label="@string/title_hearts"
-        tools:layout="@layout/fragment_hearts" />
+        android:id="@+id/navigation_meeting"
+        android:name="com.example.University_blind_dating.ui.meeting.MeetingFragment"
+        android:label="@string/title_meeting"
+        tools:layout="@layout/fragment_meeting" />
 
     <fragment
         android:id="@+id/navigation_chatting"
