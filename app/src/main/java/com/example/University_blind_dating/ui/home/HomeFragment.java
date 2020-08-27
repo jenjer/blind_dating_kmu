@@ -100,13 +100,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-
-
-
-
-
-
     /*------------------Actionbar of Home Fragment-------------------*/
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
