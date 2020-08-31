@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="splash_name">로그인</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_meeting">Meeting</string>
-    <string name="title_chatting">Chatting</string>
+    <string name="title_home">홈</string>
+    <string name="title_dashboard">게시판</string>
+    <string name="title_notifications">알림</string>
+    <string name="title_meeting">과팅</string>
+    <string name="title_chatting">채팅</string>
     <string name="title_user_setting">유저 설정</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
