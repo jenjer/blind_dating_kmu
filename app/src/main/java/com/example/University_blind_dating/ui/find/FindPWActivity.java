@@ -54,7 +54,7 @@ public class FindPWActivity extends AppCompatActivity {
 
                 if (output_pw != null) {
                     try {
-                        GMailSender gMailSender = new GMailSender("kimpape123@gmail.com", "dating0715");
+                        GMailSender gMailSender = new GMailSender("kimpape123@gmail.com", "dating0715"); //todo 보안 설정
                         //GMailSender.sendMail(제목, 본문내용, 받는사람);
                         gMailSender.sendMail("dating앱 비밀번호",
                                 output_pw,
