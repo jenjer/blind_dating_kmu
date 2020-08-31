@@ -23,6 +23,7 @@ public class SplashActivity extends AppCompatActivity {
     IDtext = id 적는 텍스트박스
     loginbutton = login버튼
     PWtext = pw 적는 텍스트박스
+    findButton = 비밀번호 찾기 버튼
 */
 
     private LoginCallback loginCallback;
@@ -49,10 +50,11 @@ public class SplashActivity extends AppCompatActivity {
         Button_Facebook_login.setReadPermissions (Arrays.asList("public_profile", "email"));
         Button_Facebook_login.registerCallback(callbackManager,loginCallback);
 
-
-
         Button registerButton = (Button)findViewById(R.id.register);
         Button testButton = (Button)findViewById(R.id.testButton);
+
+        Button findButton = (Button)findViewById(R.id.id_pw_find);
+
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +68,14 @@ public class SplashActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
             }
+        });
+        findButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FindActivity.class);
+                startActivity(intent);
+            }
+
         });
     }
 
