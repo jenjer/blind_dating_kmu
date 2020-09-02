@@ -2,6 +2,7 @@ package com.example.FacebookLogin;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.FacebookCallback;
@@ -15,6 +16,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import static com.example.login_data.Login_data_log.get_login_data;
+
 public class LoginCallback implements FacebookCallback<LoginResult> {
     ArrayList<String> myarray = new ArrayList<String>();
     //Call when you success login it means Access Tocken making
@@ -22,6 +25,7 @@ public class LoginCallback implements FacebookCallback<LoginResult> {
     public void onSuccess(LoginResult loginResult){
         Log.e("Callback::","onSuccess");
         requestMe(loginResult.getAccessToken());
+        get_login_data().setID (loginResult.getAccessToken().getUserId());
     }
 
     //this will call when you close login

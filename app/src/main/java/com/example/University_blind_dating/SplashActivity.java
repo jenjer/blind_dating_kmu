@@ -10,11 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.FacebookLogin.LoginCallback;
 import com.example.University_blind_dating.ui.splash.RegisterActivity;
 import com.facebook.CallbackManager;
+import com.facebook.GraphRequest;
 import com.facebook.login.widget.LoginButton;
 
 
 
 import java.util.Arrays;
+
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -37,11 +39,9 @@ public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         //facebook call back manager
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         callbackManager = CallbackManager.Factory.create();
         loginCallback = new LoginCallback();
         LoginButton Button_Facebook_login;

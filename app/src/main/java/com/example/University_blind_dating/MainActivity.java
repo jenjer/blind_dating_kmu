@@ -3,6 +3,7 @@ package com.example.University_blind_dating;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.University_blind_dating.ui.home.UserSettingActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,6 +14,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import static com.example.login_data.Login_data_log.get_login_data;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
+        //todo for 영수 여기서 로그인정보를 받아옴
+        Toast.makeText(this, get_login_data().getID() , Toast.LENGTH_SHORT).show();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 활성화                                        //TODO 정후 : 네비게이션 이동 이후 내 정보 사라지는 버그 수정 못할 시 삭제
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_user); // 뒤로가기 버튼 설정 아이콘으로 변경                  // 버그 수정 못할 시 삭제
     }
