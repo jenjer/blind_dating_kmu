@@ -111,6 +111,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.actionbar_actions, menu);
+        menu.findItem(R.id.home_search).setVisible(true);
+        menu.findItem(R.id.user_settings).setVisible(true);
+        menu.findItem(R.id.likes).setVisible(true);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

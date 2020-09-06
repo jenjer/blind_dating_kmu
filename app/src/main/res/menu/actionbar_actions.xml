@@ -6,16 +6,25 @@
         android:id="@+id/home_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
+        android:visible="false"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always"> </item>
+        app:showAsAction="always"></item>
     <item
-        android:title="Item"
         android:id="@+id/user_settings"
         android:icon="@drawable/ic_user"
-        app:showAsAction="always"> </item>
+        android:title="Item"
+        android:visible="false"
+        app:showAsAction="always"></item>
     <item
         android:id="@+id/likes"
         android:icon="@drawable/ic_likes"
         android:title="likes"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/write"
+        android:icon="@drawable/ic_writing"
+        android:title="write"
+        android:visible="false"
         app:showAsAction="always" />
 </menu>
