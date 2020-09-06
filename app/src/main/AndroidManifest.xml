@@ -45,7 +45,8 @@
         <activity android:name=".FindActivity"></activity>
         <activity android:name=".ui.find.FindIDActivity"></activity>
         <activity android:name=".ui.find.FindPWActivity"></activity>
-
+        <activity android:name=".ui.find.CertificationMail"></activity>
+        <activity android:name=".ui.find.CertificationSNS"></activity>
 
     </application>
 

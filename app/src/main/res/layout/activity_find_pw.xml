@@ -9,73 +9,26 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="top"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/input_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="가입 시 등록한 이메일 입력"
-            android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/use_email_button"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:text="이메일로 찾기" />
 
         <Button
-            android:id="@+id/confirm_email"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:text="이메일 확인" />
-
-        <EditText
-            android:id="@+id/input_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:ems="11"
-            android:hint="가입 시 등록한 전화번호 입력"
-            android:inputType="textPersonName" />
-
-        <Button
-            android:id="@+id/confirm_phone"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:text="문자 확인" />
-
-        <EditText
-            android:id="@+id/input_certification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:ems="6"
-            android:hint="인증번호 입력"
-            android:inputType="textPersonName" />
-
-        <Button
-            android:id="@+id/confirm_certification"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:text="인증번호 확인" />
-
-
-        <TextView
-            android:id="@+id/view_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="확인용" />
-
+            android:id="@+id/use_sns_button"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:text="SNS로 찾기" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

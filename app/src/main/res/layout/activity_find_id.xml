@@ -26,6 +26,16 @@
             android:hint="가입 시 등록한 이메일 입력"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/input_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="생년월일(6자리) 입력"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/confirm"
             android:layout_width="80dp"
@@ -38,8 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="확인용" />
+            android:layout_marginTop="30dp" />
 
 
     </LinearLayout>

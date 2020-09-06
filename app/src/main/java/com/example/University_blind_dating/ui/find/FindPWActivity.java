@@ -2,28 +2,37 @@ package com.example.University_blind_dating.ui.find;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import javax.mail.MessagingException;
-import javax.mail.SendFailedException;
-
-import android.telephony.SmsManager;
-
-import com.example.University_blind_dating.FindActivity;
 import com.example.University_blind_dating.R;
-import com.example.University_blind_dating.function.MailSender.GMailSender;
 
 public class FindPWActivity extends AppCompatActivity {
 
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_find_pw);
+        Button id_button = (Button) findViewById(R.id.use_email_button);
+        id_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CertificationMail.class);
+                startActivity(intent);
+            }
+        });
+
+        Button pw_button = (Button) findViewById(R.id.use_sns_button);
+        pw_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CertificationSNS.class);
+                startActivity(intent);
+            }
+        });
+    }
+/*
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pw);
@@ -108,4 +117,6 @@ public class FindPWActivity extends AppCompatActivity {
             }
         });
     }
+
+ */
 }

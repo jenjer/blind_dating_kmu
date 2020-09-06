@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="SNS 인증"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/input_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="인증 받을 휴대폰 번호를 입력하세요."
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/send_sns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="인증번호 보내기" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30sp">
+        <TextView
+            android:id="@+id/time_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3:00"
+            android:textSize="20sp"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/certification_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:hint="인증번호를 입력해주세요"
+            android:textSize="20sp"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:text="확인"
+            android:textSize="10sp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>
