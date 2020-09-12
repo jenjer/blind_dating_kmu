@@ -36,7 +36,7 @@
                 android:layout_height="170dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
-                android:text="move_chat" />
+                android:text="사진으로 소개" />
 
             <Button
                 android:id="@+id/button_Fragment_Chat2"
@@ -45,17 +45,17 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="move_chat" />
+                android:text="성격으로 소개" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Button" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="목소리로 소개" />
 
             <TextView
                 android:id="@+id/text_view_group_ting"
@@ -79,7 +79,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="move_chat" />
+                    android:text="아는사람과의 과팅" />
 
                 <Button
                     android:id="@+id/button_Fragment_Chat4"
@@ -88,7 +88,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:text="move_chat" />
+                    android:text="랜덤 과팅" />
             </LinearLayout>
 
             <TextView
