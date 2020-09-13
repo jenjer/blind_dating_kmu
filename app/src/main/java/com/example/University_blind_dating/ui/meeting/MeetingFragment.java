@@ -47,7 +47,7 @@ public class MeetingFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Actionbar item click event
         int id = item.getItemId();
-        if (id == R.id.home_search){
+        if (id == R.id.dashboard_search){
             Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

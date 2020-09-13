@@ -2,8 +2,6 @@ package com.example.University_blind_dating.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,14 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
@@ -27,7 +22,6 @@ import com.example.University_blind_dating.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import Collage_adapter.Collage_find_adapter;
 import Collage_adapter.Community_adapter;
 
 public class HomeFragment extends Fragment {
@@ -111,7 +105,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.actionbar_actions, menu);
-        menu.findItem(R.id.home_search).setVisible(true);
         menu.findItem(R.id.user_settings).setVisible(true);
         menu.findItem(R.id.likes).setVisible(true);
         super.onCreateOptionsMenu(menu, inflater);
@@ -125,9 +118,6 @@ public class HomeFragment extends Fragment {
             //Toast.makeText(getActivity(), "Settings", Toast.LENGTH_SHORT).show();
             Intent user_setting_activity = new Intent(this.getContext(), UserSettingActivity.class);
             startActivity(user_setting_activity);
-        }
-        if (id == R.id.home_search){
-            //Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
         }
         if (id == R.id.likes){
             Intent likes_activity = new Intent(this.getContext(), LikesActivity.class);
