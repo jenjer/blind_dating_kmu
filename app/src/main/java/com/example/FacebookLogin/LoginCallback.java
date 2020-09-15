@@ -25,7 +25,7 @@ public class LoginCallback implements FacebookCallback<LoginResult> {
     public void onSuccess(LoginResult loginResult){
         Log.e("Callback::","onSuccess");
         requestMe(loginResult.getAccessToken());
-        get_login_data().setID (loginResult.getAccessToken().getUserId());
+        get_login_data().set_outer_login (loginResult.getAccessToken().getUserId());
     }
 
     //this will call when you close login

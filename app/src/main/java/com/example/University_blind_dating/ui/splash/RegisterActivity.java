@@ -1,10 +1,14 @@
 package com.example.University_blind_dating.ui.splash;
 import com.example.University_blind_dating.*;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,19 +29,24 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editSearch;        // 검색어를 입력할 Input 창
     private Collage_find_adapter adapter;      // 리스트뷰에 연결할 아답터
     private ArrayList<String> arraylist;
-
+    private static Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mContext = getApplicationContext();//현재 콘텍스트 저장
 
-        editSearch = (EditText) findViewById(R.id.EditText_find_collage);
+        final AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.AutoCompleteTextView_find_collage);
+
+        editSearch = (EditText) findViewById(R.id.AutoCompleteTextView_find_collage);
         listView = (ListView) findViewById(R.id.Listview_find_collage);
         //make list
         list = new ArrayList<String>();
         //검색에 사용할 데이터를 가져온다.
         settingList();
+        autoCompleteTextView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,list));
+
         //리스트의 모든 데이터를 arraylist에 복사한다.(list 복사본을 만든다)
         arraylist = new ArrayList<String>();
         arraylist.addAll(list);
@@ -104,5 +113,8 @@ public class RegisterActivity extends AppCompatActivity {
         list.add("계명대3");
         list.add("계명대4");
         list.add("계명대5");
+    }
+    public static Context getContext(){
+        return mContext;//콘텍스트 리턴해주는 함수
     }
 }

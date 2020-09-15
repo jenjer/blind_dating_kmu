@@ -31,11 +31,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         //todo for 영수 여기서 로그인정보를 받아옴
-        Toast.makeText(this, get_login_data().getID() , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, get_login_data().get_outer_login() , Toast.LENGTH_SHORT).show();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼 활성화                                        //TODO 정후 : 네비게이션 이동 이후 내 정보 사라지는 버그 수정 못할 시 삭제
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_user); // 뒤로가기 버튼 설정 아이콘으로 변경                  // 버그 수정 못할 시 삭제
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        if (id == android.R.id.home){ // 뒤로가기 버튼                                                                        // 버그 수정 못할 시 삭제
+            Intent user_setting_activity = new Intent(this, UserSettingActivity.class); // 뒤로가기 버튼을 설정으로 변경 // 버그 수정 못할 시 삭제
+            startActivity(user_setting_activity);                                                                            // 버그 수정 못할 시 삭제
+        }                                                                                                                    // 버그 수정 못할 시 삭제
         return super.onOptionsItemSelected(item);
     }
 }

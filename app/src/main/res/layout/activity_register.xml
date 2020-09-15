@@ -23,8 +23,8 @@
                 android:layout_marginTop="100dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <EditText
-                android:id="@+id/EditText_find_collage"
+            <AutoCompleteTextView
+                android:id="@+id/AutoCompleteTextView_find_collage"
                 android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

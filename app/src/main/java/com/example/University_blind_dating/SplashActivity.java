@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.FacebookLogin.LoginCallback;
 import com.example.University_blind_dating.ui.splash.RegisterActivity;
+import com.example.login_data.Login_data_log;
 import com.facebook.CallbackManager;
 import com.facebook.GraphRequest;
 import com.facebook.login.widget.LoginButton;
@@ -17,6 +18,7 @@ import com.facebook.login.widget.LoginButton;
 
 import java.util.Arrays;
 
+import static com.example.login_data.Login_data_log.get_login_data;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -45,6 +47,7 @@ public class SplashActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         loginCallback = new LoginCallback();
         LoginButton Button_Facebook_login;
+        get_login_data().Auto_login();
 
         Button_Facebook_login = (LoginButton)findViewById(R.id.Button_facebook_login);
         Button_Facebook_login.setReadPermissions (Arrays.asList("public_profile", "email"));
@@ -77,6 +80,9 @@ public class SplashActivity extends AppCompatActivity {
             }
 
         });
+    }
+    public void button_login_onclick(View view2){
+
     }
 
 }
