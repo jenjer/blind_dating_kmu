@@ -1,7 +1,5 @@
 package com.example.University_blind_dating.ui.splash;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
+import com.example.University_blind_dating.*;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,18 +12,10 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.University_blind_dating.MainActivity;
 import com.example.University_blind_dating.R;
-import com.example.University_blind_dating.SplashActivity;
-import com.example.University_blind_dating.db.splashDB.RegisterRequest;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
     private List<String> list;          // 데이터를 넣은 리스트변수
     private ListView listView;          // 검색을 보여줄 리스트변수
     private EditText editSearch;        // 검색어를 입력할 Input 창
-    private EditText editUserID;        // 유저 아이디를 받는 Input 창
-    private EditText editUserPW1;        // 유저 비밀번호를 받는 Input 창
-    private EditText editUserPW2;        // 유저 비밀번호 확인을 받는 Input 창
     private Collage_find_adapter adapter;      // 리스트뷰에 연결할 아답터
     private ArrayList<String> arraylist;
     private static Context mContext;
@@ -53,10 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
         final AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.AutoCompleteTextView_find_collage);
 
         editSearch = (EditText) findViewById(R.id.AutoCompleteTextView_find_collage);
-        editUserID = (EditText) findViewById(R.id.editText_NewID);
-        editUserPW1 = (EditText) findViewById(R.id.editText_UserPW1);
-        editUserPW2 = (EditText) findViewById(R.id.editText_UserPW2);
-
         listView = (ListView) findViewById(R.id.Listview_find_collage);
         //make list
         list = new ArrayList<String>();
@@ -97,45 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userID = editUserID.getText().toString(); //입력된 아이디를 스트링값으로
-                String userPW1 = editUserPW1.getText().toString(); //입력된 비밀번호1을 스트링값으로
-                String userPW2 = editUserPW2.getText().toString(); //입력된 비밀번호2를 스트링값으로
-
-                if(userID.length() != 0 && userPW1.length() != 0 && userPW2.length() != 0 && userPW1.equals(userPW2)){
-                    Response.Listener<String> responseListener = new Response.Listener<String>() { //DB와 통신을 요청한다, php문에 에러가 없으면 success반납 php문은 서버안에 담겨져있고, 파일질라를 통해 php문을 넣게된다.
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                boolean success = jsonObject.getBoolean("success");
-                                if (success) { //success를 반납받으면 (php문에서 질의문을 보낸 후 응답을 제대로 받게되면 success를 반납하게 된다)
-                                    Toast.makeText(getApplicationContext(), "회원등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-
-                                    Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
-                                    startActivity(intent);
-                                } else { //success반납받지 못하면 (php문에서 질의문에 에러가 있을 시 success를 반납받지 못하게 된다. else문 안의 토스트메시지가 뜬다면 php문안의 질의문을 확인해주세요. //php문 안의 문법을 틀릴시에도 success반납을 못받습니다.
-                                    Toast.makeText(getApplicationContext(), "에러!", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    };
-                    //서버로 volley를 이용해서 요청
-                    RegisterRequest registerrequest = new RegisterRequest(userID, userPW1, responseListener); //RegisterRequest로 인스턴스 생성
-                    RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this); //큐를 생성하여 요청문(registerRequest)를 넣고 해당 순서가 되면 큐에서 나가게 됩니다.
-                    queue.add(registerrequest); //큐에 해당 리퀘스트 삽입
-
-                }else if(userID.length() == 0){ //ID값이 없을때
-                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요!", Toast.LENGTH_SHORT).show();
-                }else if(userPW1.length() == 0 || userPW2.length() == 0){ //PW값이 없을때
-                    Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요!", Toast.LENGTH_SHORT).show();
-                }else if(!userPW1.equals(userPW2)){ //두 PW값이 다를때
-                    Toast.makeText(getApplicationContext(), "두 비밀번호가 같지 않습니다!", Toast.LENGTH_SHORT).show();
-                }
-
-
+                Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
+                startActivity(intent);
             }
         });
     }
