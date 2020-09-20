@@ -53,10 +53,16 @@ public class SplashActivity extends AppCompatActivity {
         Button_Facebook_login.setReadPermissions (Arrays.asList("public_profile", "email"));
         Button_Facebook_login.registerCallback(callbackManager,loginCallback);
 
+        Button loginButton = (Button)findViewById(R.id.button_login);
         Button registerButton = (Button)findViewById(R.id.register);
         Button testButton = (Button)findViewById(R.id.testButton);
-
         Button findButton = (Button)findViewById(R.id.id_pw_find);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
