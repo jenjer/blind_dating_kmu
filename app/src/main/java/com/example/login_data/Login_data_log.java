@@ -42,6 +42,7 @@ public class Login_data_log {
     public void set_ID(String id){
         this.id = id;
         //로그인 정보를 sharedpreferences 에 저장시킨다. (id저장)
+
         SharedPreferences login_data = getApplicationContext().getSharedPreferences("id_data",getApplicationContext().MODE_PRIVATE);
         SharedPreferences.Editor editor = login_data.edit();
         editor.putString("id_data",this.id);
