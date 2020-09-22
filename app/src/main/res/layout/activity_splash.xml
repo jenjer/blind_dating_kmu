@@ -72,6 +72,14 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp" />
 
+            <com.kakao.usermgmt.LoginButton
+                android:id="@+id/Button_kakao_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="30dp" />
+
             <Button
                 android:id="@+id/google"
                 android:layout_width="wrap_content"

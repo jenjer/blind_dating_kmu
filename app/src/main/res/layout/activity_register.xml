@@ -28,7 +28,7 @@
                 android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="50dp"
                 android:gravity="center"
                 android:hint="학교명을 입력해주세요." />
 
@@ -45,11 +45,48 @@
             </ListView>
 
             <EditText
+                android:id="@+id/editText_NewEmail"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:hint="이메일을 입력해주세요." />
+            <Button
+                android:id="@+id/btn_send_email"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="인증번호 보내기" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <EditText
+                    android:id="@+id/editText_certification_num"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"
+                    android:hint="인증번호"
+                    android:layout_gravity="center" />
+                <Button
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:text="확인"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <EditText
                 android:id="@+id/editText_NewID"
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:hint="아이디를 입력해주세요." />
 

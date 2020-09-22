@@ -38,7 +38,7 @@ public class CertificationMail extends AppCompatActivity implements View.OnClick
     Button confirmBtn; // 인증 확인 버튼
     CountDownTimer countDownTimer;
 
-    final int MILLISINFUTURE = 180 * 1000; //총 시간 (300초 = 5분)
+    final int MILLISINFUTURE = 180 * 1000; //총 시간
     final int COUNT_DOWN_INTERVAL = 1000; //onTick 메소드를 호출할 간격 (1초)
 
     @Override
@@ -71,7 +71,7 @@ public class CertificationMail extends AppCompatActivity implements View.OnClick
 
                 if ((emailAuthCount - ((emailAuthCount / 60) * 60)) >= 10) { //초가 10보다 크면 그냥 출력
                     timeCounter.setText((emailAuthCount / 60) + " : " + (emailAuthCount - ((emailAuthCount / 60) * 60)));
-                } else { //초가 10보다 작으면 앞에 '0' 붙여서 같이 출력. ex) 02,03,04...
+                } else { //초가 10보다 작으면 앞에 '0' 붙여서 같이 출력.
                     timeCounter.setText((emailAuthCount / 60) + " : 0" + (emailAuthCount - ((emailAuthCount / 60) * 60)));
                 }
             }
@@ -127,7 +127,7 @@ public class CertificationMail extends AppCompatActivity implements View.OnClick
                 }
                 break;
 
-            case R.id.confirm_btn: //다이얼로그 내의 인증번호 인증 버튼을 눌렀을 시
+            case R.id.confirm_btn:
                 if (isCounted == true) {
                     System.out.println(randomNum);
                     String inputNum = certificationNum.getText().toString();

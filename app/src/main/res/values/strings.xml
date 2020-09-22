@@ -24,5 +24,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook_app_id">1020344948383427</string> <string name="fb_login_protocol_scheme">fb1020344948383427</string>
+    <string name="kakao_app_key">baa030f557c07d07cbe83930b4e9099f</string>
 
 </resources>

@@ -6,6 +6,7 @@ import com.android.volley.toolbox.Volley;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -23,16 +24,21 @@ import com.example.University_blind_dating.MainActivity;
 import com.example.University_blind_dating.R;
 import com.example.University_blind_dating.SplashActivity;
 import com.example.University_blind_dating.db.splashDB.RegisterRequest;
+import com.example.University_blind_dating.function.MailSender.GMailSender;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import javax.mail.MessagingException;
+import javax.mail.SendFailedException;
 
 import Collage_adapter.Collage_find_adapter;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private List<String> list;          // 데이터를 넣은 리스트변수
     private ListView listView;          // 검색을 보여줄 리스트변수
@@ -44,13 +50,37 @@ public class RegisterActivity extends AppCompatActivity {
     private ArrayList<String> arraylist;
     private static Context mContext;
 
+    String randomNum; // 랜덤 인증번호
+    boolean isAccounted = true; // 가입되어 있는지 확인
+    boolean isCertified = false; // 이메일 인증 확인
+    EditText inputEmail; // 이메일 입력 EditText
+    Button sendEmailBtn; // 인증번호 보내기 버튼
+    EditText certificationNum; // 인증 번호 입력 EditText
+    Button confirmBtn; // 인증 확인 버튼
+    String input_email = ""; // 인증 확인 후, 가입 시 DB에 저장하기 위한 email
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mContext = getApplicationContext();//현재 콘텍스트 저장
 
+        // 이메일 관련
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .permitDiskReads()
+                .permitDiskWrites()
+                .permitNetwork().build());
+        //
+
         final AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.AutoCompleteTextView_find_collage);
+
+        inputEmail = (EditText) findViewById(R.id.editText_NewEmail);
+        sendEmailBtn = (Button) findViewById(R.id.btn_send_email);
+        sendEmailBtn.setOnClickListener(this);
+
+        certificationNum = (EditText) findViewById(R.id.editText_certification_num);
+        confirmBtn = (Button) findViewById(R.id.btn_confirm);
+        confirmBtn.setOnClickListener(this);
 
         editSearch = (EditText) findViewById(R.id.AutoCompleteTextView_find_collage);
         editUserID = (EditText) findViewById(R.id.editText_NewID);
@@ -101,9 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
                 String userPW1 = editUserPW1.getText().toString(); //입력된 비밀번호1을 스트링값으로
                 String userPW2 = editUserPW2.getText().toString(); //입력된 비밀번호2를 스트링값으로
 
-                if(userID.length() != 0 && userPW1.length() != 0 && userPW2.length() != 0 && userPW1.equals(userPW2)){
+                if(userID.length() != 0 && userPW1.length() != 0 && userPW2.length() != 0 && userPW1.equals(userPW2) && isCertified != false){
                     Response.Listener<String> responseListener = new Response.Listener<String>() { //DB와 통신을 요청한다, php문에 에러가 없으면 success반납 php문은 서버안에 담겨져있고, 파일질라를 통해 php문을 넣게된다.
-                        @Override
+                            @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
@@ -123,6 +153,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     };
                     //서버로 volley를 이용해서 요청
+                    //todo #DB : input_email을 DB사용자 email에 등록시켜주세요~
                     RegisterRequest registerrequest = new RegisterRequest(userID, userPW1, responseListener); //RegisterRequest로 인스턴스 생성
                     RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this); //큐를 생성하여 요청문(registerRequest)를 넣고 해당 순서가 되면 큐에서 나가게 됩니다.
                     queue.add(registerrequest); //큐에 해당 리퀘스트 삽입
@@ -133,8 +164,9 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요!", Toast.LENGTH_SHORT).show();
                 }else if(!userPW1.equals(userPW2)){ //두 PW값이 다를때
                     Toast.makeText(getApplicationContext(), "두 비밀번호가 같지 않습니다!", Toast.LENGTH_SHORT).show();
+                }else if(isCertified == false) { // 이메일 미인증 시
+                    Toast.makeText(getApplicationContext(), "이메일을 인증해주세요!", Toast.LENGTH_SHORT).show();
                 }
-
 
             }
         });
@@ -170,5 +202,50 @@ public class RegisterActivity extends AppCompatActivity {
     }
     public static Context getContext(){
         return mContext;//콘텍스트 리턴해주는 함수
+    }
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_send_email:
+                isCertified = false; // 인증 확인 초기화
+                input_email = inputEmail.getText().toString();
+                // todo #DB : input_email을 확인하여 이미 가입된 회원인지 확인해야함
+                //  있으면 isAccounted = false, 없으면 isAccounted = true
+                isAccounted = false; // 테스트용 계정 없음 확인
+
+                if(isAccounted == false) {
+                    Random random = new Random();
+                    randomNum = Integer.toString(random.nextInt(1000000));
+                    System.out.println(randomNum);
+                    try {
+                        GMailSender gMailSender = new GMailSender("kimpape123@gmail.com", "dating0715"); //todo 보안 설정
+                        //GMailSender.sendMail(제목, 본문내용, 받는사람);
+                        gMailSender.sendMail("dating앱 인증번호",
+                                randomNum,
+                                input_email,
+                                input_email);
+                        Toast.makeText(getApplicationContext(), "이메일을 성공적으로 보냈습니다.", Toast.LENGTH_SHORT).show();
+                    } catch (SendFailedException e) {
+                        Toast.makeText(getApplicationContext(), "이메일 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show();
+                    } catch (MessagingException e) {
+                        Toast.makeText(getApplicationContext(), "인터넷 연결을 확인해주십시오", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "이미 등록된 회원입니다.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case R.id.btn_confirm:
+                String inputNum = certificationNum.getText().toString();
+                if (inputNum.equals(randomNum)) {
+                    Toast.makeText(this, "이메일 인증 성공", Toast.LENGTH_SHORT).show();
+                    isCertified = true;
+                } else {
+                    Toast.makeText(this, "이메일 인증 실패", Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
     }
 }
