@@ -8,8 +8,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,11 +46,11 @@ public class HomeFragment extends Fragment {
 
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        Button Chat_button = (Button)root.findViewById(R.id.Button_Fragment_Chat);
-        Chat_button.setOnClickListener(new View.OnClickListener(){
+        TextView move_dash = (TextView)root.findViewById(R.id.text_view_community);
+        move_dash.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Navigation.findNavController(root).navigate(R.id.action_navigation_home_to_navigation_chatting);
+                Navigation.findNavController(root).navigate(R.id.action_navigation_home_to_navigation_dashboard);
             }
         });
 
@@ -70,6 +72,13 @@ public class HomeFragment extends Fragment {
         adapter = new Community_adapter(list, getActivity(),list_Community_text);
         //리스트뷰에 아답터를 연동한다.
         listView_community.setAdapter(adapter);
+        ListView list_move_dash = (ListView)root.findViewById(R.id.ListView_Community);
+        list_move_dash.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Navigation.findNavController(root).navigate(R.id.action_navigation_home_to_navigation_dashboard);
+            }
+        });
         return root;
 
     }
