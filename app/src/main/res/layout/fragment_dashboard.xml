@@ -5,12 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.dashboard.DashboardFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,8 +42,6 @@
             <ListView
                 android:id="@+id/ListView_dashboard"
                 android:layout_width="match_parent"
-                android:layout_height="725dp" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
-    </ScrollView>
-
 </LinearLayout>
