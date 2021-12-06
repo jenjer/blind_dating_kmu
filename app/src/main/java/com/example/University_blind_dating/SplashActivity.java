@@ -13,7 +13,7 @@ import com.example.login_data.Login_data_log;
 import com.facebook.CallbackManager;
 import com.facebook.GraphRequest;
 import com.facebook.login.widget.LoginButton;
-
+import com.facebook.FacebookSdk;
 
 
 import java.util.Arrays;
